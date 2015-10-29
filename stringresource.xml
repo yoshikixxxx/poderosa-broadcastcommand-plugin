@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+Copyright 2015 yoshikixxxx.
+-->
+
+<string-resource>
+  <record name="Common.OK">
+    <ja>OK</ja>
+    <en>OK</en>
+  </record>
+
+  <record name="Common.Cancel">
+    <ja>キャンセル</ja>
+    <en>Cancel</en>
+  </record>
+
+  <record name="Menu.BroadcastCommand">
+    <ja>ブロードキャストコマンド</ja>
+    <en>Broadcast Command</en>
+  </record>
+
+  <record name="Command.BroadcastCommand">
+    <ja>ブロードキャストコマンド</ja>
+    <en>Broadcast Command</en>
+  </record>
+
+  <record name="Caption.BroadcastCommand">
+    <ja>ブロードキャストコマンド</ja>
+    <en>Broadcast Command</en>
+  </record>
+
+  <record name="Form.BroadcastCommand._commandClearButton">
+    <ja>クリア(&amp;C)</ja>
+    <en>Clear(&amp;C)</en>
+  </record>
+
+  <record name="Form.BroadcastCommand._listAllSelectButton.Check">
+    <ja>全て選択(&amp;S)</ja>
+    <en>Select all(&amp;S)</en>
+  </record>
+
+  <record name="Form.BroadcastCommand._listAllSelectButton.Uncheck">
+    <ja>全て解除(&amp;S)</ja>
+    <en>Clear all(&amp;S)</en>
+  </record>
+
+  <record name="Form.BroadcastCommand._logButton.Show">
+    <ja>ログ表示(&amp;L)</ja>
+    <en>Show log(&amp;L)</en>
+  </record>
+
+  <record name="Form.BroadcastCommand._logButton.Hide">
+    <ja>非表示(&amp;L)</ja>
+    <en>Hide(&amp;L)</en>
+  </record>
+
+  <record name="Form.BroadcastCommand._refreshListButton">
+    <ja>リスト更新(&amp;R)</ja>
+    <en>Refresh list(&amp;R)</en>
+  </record>
+
+  <record name="Form.BroadcastCommand._repeatCountLabel">
+    <ja>繰り返し回数</ja>
+    <en>Repeat count</en>
+  </record>
+
+  <record name="Form.BroadcastCommand._repeatIntervalLabel">
+    <ja>繰り返し間隔(ms)</ja>
+    <en>Interval(ms)</en>
+  </record>
+
+  <record name="Form.BroadcastCommand._tabNumberColumn">
+    <ja>タブNo.</ja>
+    <en>TabNo.</en>
+  </record>
+
+  <record name="Form.BroadcastCommand._hostNameColumn">
+    <ja>ホスト名</ja>
+    <en>Host Name</en>
+  </record>
+
+  <record name="Form.BroadcastCommand._alwaysOnTopCheck">
+    <ja>常に手前に表示(&amp;A)</ja>
+    <en>Always on top(&amp;A)</en>
+  </record>
+
+  <record name="Form.BroadcastCommand._notSendNewLine">
+    <ja>改行を送信しない(&amp;N)</ja>
+    <en>No send NewLine(&amp;N)</en>
+  </record>
+</string-resource>
