@@ -1,0 +1,65 @@
+﻿<root>
+  <resheader name="ResMimeType">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="Version">
+    <value>1.0.0.0</value>
+  </resheader>
+  <resheader name="Reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=1.0.3102.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="Writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=1.0.3102.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Common.OK">
+    <value>OK</value>
+  </data>
+  <data name="Common.Cancel">
+    <value>Cancel</value>
+  </data>
+  <data name="Menu.BroadcastCommand">
+    <value>Broadcast Command</value>
+  </data>
+  <data name="Command.BroadcastCommand">
+    <value>Broadcast Command</value>
+  </data>
+  <data name="Caption.BroadcastCommand">
+    <value>Broadcast Command</value>
+  </data>
+  <data name="Form.BroadcastCommand._commandClearButton">
+    <value>Clear(&amp;C)</value>
+  </data>
+  <data name="Form.BroadcastCommand._listAllSelectButton.Check">
+    <value>Select all(&amp;S)</value>
+  </data>
+  <data name="Form.BroadcastCommand._listAllSelectButton.Uncheck">
+    <value>Clear all(&amp;S)</value>
+  </data>
+  <data name="Form.BroadcastCommand._logButton.Show">
+    <value>Show log(&amp;L)</value>
+  </data>
+  <data name="Form.BroadcastCommand._logButton.Hide">
+    <value>Hide(&amp;L)</value>
+  </data>
+  <data name="Form.BroadcastCommand._refreshListButton">
+    <value>Refresh list(&amp;R)</value>
+  </data>
+  <data name="Form.BroadcastCommand._repeatCountLabel">
+    <value>Repeat count</value>
+  </data>
+  <data name="Form.BroadcastCommand._repeatIntervalLabel">
+    <value>Interval(ms)</value>
+  </data>
+  <data name="Form.BroadcastCommand._tabNumberColumn">
+    <value>TabNo.</value>
+  </data>
+  <data name="Form.BroadcastCommand._hostNameColumn">
+    <value>Host Name</value>
+  </data>
+  <data name="Form.BroadcastCommand._alwaysOnTopCheck">
+    <value>Always on top(&amp;A)</value>
+  </data>
+  <data name="Form.BroadcastCommand._notSendNewLine">
+    <value>No send NewLine(&amp;N)</value>
+  </data>
+</root>
