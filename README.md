@@ -5,8 +5,8 @@
 ※プラグインDLLは[Download & History](#dl_history)または[release][MENU-RELEASE]からダウンロードできます。  
 (* The plug-in DLL [Download & History](#dl_history) or can be downloaded from [release][MENU-RELEASE].)
 
-Poderosa用のブロードキャストコマンドプラグインです。  
-(This is for Poderosa broadcast command plugin.)
+Poderosaのプラグインです。(ブロードキャストコマンドプラグイン)  
+(This plugin is for Poderosa. broadcast command plugin.)
 
 このプラグインは、接続中のホストに対して入力したコマンドを一括送信するものです。  
 (This plugin is to send bulk command you entered for the connected host.)
