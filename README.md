@@ -95,7 +95,7 @@ Poderosaディレクトリ内に下記のように配置します。
 
 
 ## License
-Copyright 2015 yoshikixxxx.  
+Copyright 2015 yoshikixxxx. ([Twitter][TWITTER])  
 Licensed under the Apache License, Version 2.0 (the "License");  
 you may not use this file except in compliance with the License.
 
@@ -105,3 +105,4 @@ you may not use this file except in compliance with the License.
 [MENU-RELEASE]: https://github.com/yoshikixxxx/poderosa-broadcastcommand-plugin/releases
 [DL-1.0-net20]: https://github.com/yoshikixxxx/poderosa-broadcastcommand-plugin/releases/download/1.0/broadcastcommand_1.0_net20.zip
 [DL-1.0-net45]: https://github.com/yoshikixxxx/poderosa-broadcastcommand-plugin/releases/download/1.0/broadcastcommand_1.0_net45.zip
+[TWITTER]: https://twitter.com/yoshikixxxxaol
