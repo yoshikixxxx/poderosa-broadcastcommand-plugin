@@ -1,4 +1,4 @@
-# Poderosa BroadcastCommand plugin
+# Poderosa ブロードキャストコマンドプラグイン (v1.1)
 ※日本語から英語への翻訳はBing翻訳を使用しています。  
 (* Japanese to English translations use the Bing translator.)
 
@@ -27,6 +27,15 @@ VisualC# 2013で開発し、Poderosa v4.3.16(.Net4.5と2.0)で動作確認して
 
 * コマンド入力後にShift+Enterキーで改行します  
 (After the command input line with Shift + Enter.)
+
+* 画面のバッファをクリアすることができます。  
+(Can clear the screen buffer.)
+
+* 改行のみを送信することができます。  
+(Can send newlines only.)
+
+* Ctrl+Cを送信することができます。  
+(Can send CTRL+C.)
 
 * モードレスダイアログなのでダイアログ表示中でもPoderosaウィンドウを操作できます  
 (Modeless dialog so manipulate dialog among Poderosa window.)
@@ -89,13 +98,27 @@ Poderosaディレクトリ内に下記のように配置します。
 
 
 ## <a name ="dl_history">Download & History
+* 2016/03/18 v1.1 [(.Net2.0)][DL-1.1-net20] [(.Net4.5)][DL-1.1-net45]  
+画面のバッファクリアボタンを追加しました。  
+(Added the buffer clear button of the screen.)  
+改行送信ボタンを追加しました。  
+(Added NewLine send button.)  
+Ctrl+C送信ボタンを追加しました。  
+(Added CTRL+C send button.)  
+プラグイン実行時にセッションリストの1行目にフォーカスを当てておくように変更しました。  
+(Changed plug-ins at run time on the first line of the session list focus on you like.)  
+いくつかのキーボードショートカットを変更しました。  
+(Some keyboard shortcuts have changed.)  
+ビルド出力パスを修正しました。  
+(Fixed the build output path.)
+
 * 2015/10/29 v1.0 [(.Net2.0)][DL-1.0-net20] [(.Net4.5)][DL-1.0-net45]  
 初期リリース  
 (Initial release.)
 
 
 ## License
-Copyright 2015 yoshikixxxx. ([Twitter][TWITTER])  
+Copyright 2015-2016 yoshikixxxx. ([Twitter][TWITTER])  
 Licensed under the Apache License, Version 2.0 (the "License");  
 you may not use this file except in compliance with the License.
 
@@ -105,4 +128,6 @@ you may not use this file except in compliance with the License.
 [MENU-RELEASE]: https://github.com/yoshikixxxx/poderosa-broadcastcommand-plugin/releases
 [DL-1.0-net20]: https://github.com/yoshikixxxx/poderosa-broadcastcommand-plugin/releases/download/1.0/broadcastcommand_1.0_net20.zip
 [DL-1.0-net45]: https://github.com/yoshikixxxx/poderosa-broadcastcommand-plugin/releases/download/1.0/broadcastcommand_1.0_net45.zip
+[DL-1.1-net20]: https://github.com/yoshikixxxx/poderosa-broadcastcommand-plugin/releases/download/1.1/broadcastcommand_1.1_net20.zip
+[DL-1.1-net45]: https://github.com/yoshikixxxx/poderosa-broadcastcommand-plugin/releases/download/1.1/broadcastcommand_1.1_net45.zip
 [TWITTER]: https://twitter.com/yoshikixxxxaol

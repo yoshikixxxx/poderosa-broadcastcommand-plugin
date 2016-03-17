@@ -1,5 +1,5 @@
 ﻿/*
- * Copyright 2015 yoshikixxxx.
+ * Copyright 2015-2016 yoshikixxxx.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,8 +19,9 @@ namespace Contrib.BroadcastCommand {
     /// </summary>
     public partial class BroadcastCommandForm : Form {
         // メンバー変数
-        private const int FORM_WIDTH_LOG_SHOW = 538;
-        private const int FORM_WIDTH_LOG_HIDE = 274;
+        private const int FORM_WIDTH_LOG_SHOW = 620;
+        private const int FORM_WIDTH_LOG_HIDE = 356;
+        private const string STR_SEPARATE = "**************************************";
         private Commands _cmd = new Commands();
         private ListViewItemComparer _listViewItemSorter;
         private IPoderosaMainWindow _window;
@@ -30,6 +31,7 @@ namespace Contrib.BroadcastCommand {
         private bool _allSelectFlg = false;
         private bool _cancelFlg = false;
         private bool _sendingFlg = false;
+        private bool _firstSendFlg = true;
         private bool _refreshingFlg = false;
 
         /// <summary>
@@ -41,6 +43,9 @@ namespace Contrib.BroadcastCommand {
             InitializeComponentValue();
 
             RefreshSessionList();
+            if (_sessionListView.Items.Count > 0) {
+                _sessionListView.Items[0].Selected = true;
+            }
 
             _Initialized = true;
         }
@@ -63,12 +68,18 @@ namespace Contrib.BroadcastCommand {
             this._hostNameColumn.Text = BroadcastCommandPlugin.Strings.GetString("Form.BroadcastCommand._hostNameColumn");
             this._alwaysOnTopCheck.Text = BroadcastCommandPlugin.Strings.GetString("Form.BroadcastCommand._alwaysOnTopCheck");
             this._notSendNewLineCheck.Text = BroadcastCommandPlugin.Strings.GetString("Form.BroadcastCommand._notSendNewLine");
+            this._clearBufferButton.Text = BroadcastCommandPlugin.Strings.GetString("Form.BroadcastCommand._clearBufferButton");
+            this._sendNewLineButton.Text = BroadcastCommandPlugin.Strings.GetString("Form.BroadcastCommand._sendNewLineButton");
+            this._sendCtrlCButton.Text = BroadcastCommandPlugin.Strings.GetString("Form.BroadcastCommand._sendCtrlCButton");
 
             // デフォルト値
             this.Width = FORM_WIDTH_LOG_HIDE;
             this._logBox.Visible = false;
             this._commandBox.Clear();
             this._okButton.Enabled = false;
+            this._clearBufferButton.Enabled = false;
+            this._sendNewLineButton.Enabled = false;
+            this._sendCtrlCButton.Enabled = false;
             this._repeatCountBox.Value = 1;
             this._repeatIntervalBox.Value = 1000;
             this._repeatIntervalBox.Enabled = false;
@@ -132,6 +143,24 @@ namespace Contrib.BroadcastCommand {
         }
 
         /// <summary>
+        /// 選択済セッション取得
+        /// </summary>
+        private string GetSelectedSessionList() {
+            string Str = "";
+
+            _selectSessions.Clear();
+            foreach (ListViewItem li in _sessionListView.CheckedItems) {
+                IPoderosaDocument doc = li.Tag as IPoderosaDocument;
+                ITerminalSession ts = (ITerminalSession)doc.OwnerSession.GetAdapter(typeof(ITerminalSession));
+                if (ts != null) {
+                    _selectSessions.Add(ts);
+                    Str += ts.Caption + " ";
+                }
+            }
+            return Str.Trim();
+        }
+
+        /// <summary>
         /// OKボタンイベント
         /// </summary>
         private void _okButton_Click(object sender, EventArgs e) {
@@ -141,30 +170,26 @@ namespace Contrib.BroadcastCommand {
                 _sendingFlg = true;
                 _commandBox.ReadOnly = true;
                 _okButton.Enabled = false;
+                _listAllSelectButton.Enabled = false;
                 _repeatCountBox.Enabled = false;
                 _repeatIntervalBox.Enabled = false;
                 _sessionListView.Enabled = false;
 
                 // 選択セッションを配列に格納
-                string selectSessionStr = "";
-                _selectSessions.Clear();
-                foreach (ListViewItem li in _sessionListView.CheckedItems) {
-                    IPoderosaDocument doc = li.Tag as IPoderosaDocument;
-                    ITerminalSession ts = (ITerminalSession)doc.OwnerSession.GetAdapter(typeof(ITerminalSession));
-                    if (ts != null) {
-                        _selectSessions.Add(ts);
-                        selectSessionStr += ts.Caption + " ";
-                    }
-                }
-                selectSessionStr = selectSessionStr.Trim();
+                string selectSessionStr = GetSelectedSessionList();
 
                 // ログ出力
-                string logStr = "**************************************\r\n";
+                string logStr = "";
+                if (_firstSendFlg == true) {
+                    logStr = STR_SEPARATE + "\r\n";
+                    _firstSendFlg = false;
+                }
                 logStr += "[" + DateTime.Now.ToString() + "]\r\n";
                 logStr += "* Session  : " + selectSessionStr + "\r\n";
                 logStr += "* Count    : " + _repeatCountBox.Value.ToString() + "\r\n";
                 logStr += "* Interval : " + _repeatIntervalBox.Value.ToString() + "\r\n";
                 logStr += _commandBox.Text + "\r\n";
+                logStr += STR_SEPARATE + "\r\n";
                 _logBox.AppendText(logStr);
 
                 // コマンド送信スレッド作成
@@ -188,6 +213,7 @@ namespace Contrib.BroadcastCommand {
                 _cancelFlg = false;
                 _sendingFlg = false;
                 _okButton.Enabled = true;
+                _listAllSelectButton.Enabled = true;
                 _repeatCountBox.Enabled = true;
                 _repeatIntervalBox.Enabled = _repeatCountBox.Value > 1 ? true : false;
                 _sessionListView.Enabled = true;
@@ -215,6 +241,51 @@ namespace Contrib.BroadcastCommand {
         /// </summary>
         private void _commandClearButton_Click(object sender, EventArgs e) {
             _commandBox.Clear();
+        }
+
+        /// <summary>
+        /// バッファクリアボタンイベント
+        /// </summary>
+        private void _clearBufferButton_Click(object sender, EventArgs e) {
+            // 選択セッションを配列に格納
+            string selectSessionStr = GetSelectedSessionList();
+
+            // コマンド送信スレッド作成
+            Thread _sendCommandThread = new Thread((ThreadStart)delegate() {
+                _cmd.SendClearBuffer(_selectSessions);
+            });
+            _sendCommandThread.IsBackground = true;
+            _sendCommandThread.Start();
+        }
+
+        /// <summary>
+        /// 改行送信ボタンイベント
+        /// </summary>
+        private void _sendNewLineButton_Click(object sender, EventArgs e) {
+            // 選択セッションを配列に格納
+            string selectSessionStr = GetSelectedSessionList();
+
+            // コマンド送信スレッド作成
+            Thread _sendCommandThread = new Thread((ThreadStart)delegate() {
+                _cmd.SendLineBreak(_selectSessions);
+            });
+            _sendCommandThread.IsBackground = true;
+            _sendCommandThread.Start();
+        }
+
+        /// <summary>
+        /// Ctrl+C送信ボタンイベント
+        /// </summary>
+        private void _sendCtrlCButton_Click(object sender, EventArgs e) {
+            // 選択セッションを配列に格納
+            string selectSessionStr = GetSelectedSessionList();
+
+            // コマンド送信スレッド作成
+            Thread _sendCommandThread = new Thread((ThreadStart)delegate() {
+                _cmd.SendCtrlC(_selectSessions);
+            });
+            _sendCommandThread.IsBackground = true;
+            _sendCommandThread.Start();
         }
 
         /// <summary>
@@ -304,9 +375,15 @@ namespace Contrib.BroadcastCommand {
                 if (_sessionListView.CheckedItems.Count > 0) {
                     _okButton.Enabled = true;
                     _commandBox.Enabled = true;
+                    _clearBufferButton.Enabled = true;
+                    _sendNewLineButton.Enabled = true;
+                    _sendCtrlCButton.Enabled = true;
                 } else {
                     _okButton.Enabled = false;
                     _commandBox.Enabled = false;
+                    _clearBufferButton.Enabled = false;
+                    _sendNewLineButton.Enabled = false;
+                    _sendCtrlCButton.Enabled = false;
                 }
 
                 // 選択済みリスト保存(リスト更新時復元用)

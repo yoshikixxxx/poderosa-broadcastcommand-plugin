@@ -1,5 +1,5 @@
 ﻿/*
- * Copyright 2015 yoshikixxxx.
+ * Copyright 2015-2016 yoshikixxxx.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,9 +20,9 @@ namespace Contrib.BroadcastCommand {
     /********* プラグイン情報 *********/
     [PluginInfo(
         ID           = PLUGIN_ID,
-        Version      = "1.0",
+        Version      = "1.1",
         Author       = "yoshikixxxx",
-        Dependencies = "org.poderosa.core.window"
+        Dependencies = "org.poderosa.core.window;org.poderosa.terminalsessions;org.poderosa.terminalemulator"
     )]
     /**********************************/
 

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <!--
-Copyright 2015 yoshikixxxx.
+Copyright 2015-2016 yoshikixxxx.
 -->
 
 <string-resource>
@@ -30,8 +30,8 @@ Copyright 2015 yoshikixxxx.
   </record>
 
   <record name="Form.BroadcastCommand._commandClearButton">
-    <ja>クリア(&amp;C)</ja>
-    <en>Clear(&amp;C)</en>
+    <ja>クリア(&amp;E)</ja>
+    <en>Clear(&amp;E)</en>
   </record>
 
   <record name="Form.BroadcastCommand._listAllSelectButton.Check">
@@ -50,13 +50,28 @@ Copyright 2015 yoshikixxxx.
   </record>
 
   <record name="Form.BroadcastCommand._logButton.Hide">
-    <ja>非表示(&amp;L)</ja>
-    <en>Hide(&amp;L)</en>
+    <ja>ログ非表示(&amp;L)</ja>
+    <en>Hide log(&amp;L)</en>
   </record>
 
   <record name="Form.BroadcastCommand._refreshListButton">
     <ja>リスト更新(&amp;R)</ja>
     <en>Refresh list(&amp;R)</en>
+  </record>
+
+  <record name="Form.BroadcastCommand._clearBufferButton">
+    <ja>バッファクリア(&amp;B)</ja>
+    <en>Clear buffer(&amp;B)</en>
+  </record>
+
+  <record name="Form.BroadcastCommand._sendNewLineButton">
+    <ja>改行送信(&amp;N)</ja>
+    <en>Send NewLine(&amp;N)</en>
+  </record>
+
+  <record name="Form.BroadcastCommand._sendCtrlCButton">
+    <ja>Ctrl+C送信(&amp;C)</ja>
+    <en>Send Ctrl+C(&amp;C)</en>
   </record>
 
   <record name="Form.BroadcastCommand._repeatCountLabel">
@@ -85,7 +100,7 @@ Copyright 2015 yoshikixxxx.
   </record>
 
   <record name="Form.BroadcastCommand._notSendNewLine">
-    <ja>改行を送信しない(&amp;N)</ja>
-    <en>No send NewLine(&amp;N)</en>
+    <ja>改行を送信しない(&amp;O)</ja>
+    <en>No send NewLine(&amp;O)</en>
   </record>
 </string-resource>

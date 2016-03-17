@@ -27,7 +27,7 @@
     <value>ブロードキャストコマンド</value>
   </data>
   <data name="Form.BroadcastCommand._commandClearButton">
-    <value>クリア(&amp;C)</value>
+    <value>クリア(&amp;E)</value>
   </data>
   <data name="Form.BroadcastCommand._listAllSelectButton.Check">
     <value>全て選択(&amp;S)</value>
@@ -39,10 +39,19 @@
     <value>ログ表示(&amp;L)</value>
   </data>
   <data name="Form.BroadcastCommand._logButton.Hide">
-    <value>非表示(&amp;L)</value>
+    <value>ログ非表示(&amp;L)</value>
   </data>
   <data name="Form.BroadcastCommand._refreshListButton">
     <value>リスト更新(&amp;R)</value>
+  </data>
+  <data name="Form.BroadcastCommand._clearBufferButton">
+    <value>バッファクリア(&amp;B)</value>
+  </data>
+  <data name="Form.BroadcastCommand._sendNewLineButton">
+    <value>改行送信(&amp;N)</value>
+  </data>
+  <data name="Form.BroadcastCommand._sendCtrlCButton">
+    <value>Ctrl+C送信(&amp;C)</value>
   </data>
   <data name="Form.BroadcastCommand._repeatCountLabel">
     <value>繰り返し回数</value>
@@ -60,6 +69,6 @@
     <value>常に手前に表示(&amp;A)</value>
   </data>
   <data name="Form.BroadcastCommand._notSendNewLine">
-    <value>改行を送信しない(&amp;N)</value>
+    <value>改行を送信しない(&amp;O)</value>
   </data>
 </root>

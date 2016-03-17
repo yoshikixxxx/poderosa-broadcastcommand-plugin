@@ -27,7 +27,7 @@
     <value>Broadcast Command</value>
   </data>
   <data name="Form.BroadcastCommand._commandClearButton">
-    <value>Clear(&amp;C)</value>
+    <value>Clear(&amp;E)</value>
   </data>
   <data name="Form.BroadcastCommand._listAllSelectButton.Check">
     <value>Select all(&amp;S)</value>
@@ -39,10 +39,19 @@
     <value>Show log(&amp;L)</value>
   </data>
   <data name="Form.BroadcastCommand._logButton.Hide">
-    <value>Hide(&amp;L)</value>
+    <value>Hide log(&amp;L)</value>
   </data>
   <data name="Form.BroadcastCommand._refreshListButton">
     <value>Refresh list(&amp;R)</value>
+  </data>
+  <data name="Form.BroadcastCommand._clearBufferButton">
+    <value>Clear buffer(&amp;B)</value>
+  </data>
+  <data name="Form.BroadcastCommand._sendNewLineButton">
+    <value>Send NewLine(&amp;N)</value>
+  </data>
+  <data name="Form.BroadcastCommand._sendCtrlCButton">
+    <value>Send Ctrl+C(&amp;C)</value>
   </data>
   <data name="Form.BroadcastCommand._repeatCountLabel">
     <value>Repeat count</value>
@@ -60,6 +69,6 @@
     <value>Always on top(&amp;A)</value>
   </data>
   <data name="Form.BroadcastCommand._notSendNewLine">
-    <value>No send NewLine(&amp;N)</value>
+    <value>No send NewLine(&amp;O)</value>
   </data>
 </root>

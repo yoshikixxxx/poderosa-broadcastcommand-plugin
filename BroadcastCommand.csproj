@@ -17,42 +17,45 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\..\bin\Debug\BroadcastCommand\</OutputPath>
+    <OutputPath>bin\Debug\BroadcastCommand\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>..\..\bin\Debug\BroadcastCommand\Contrib.BroadcastCommand.xml</DocumentationFile>
+    <DocumentationFile>bin\Debug\BroadcastCommand\Contrib.BroadcastCommand.xml</DocumentationFile>
     <NoWarn>1591</NoWarn>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>..\..\bin\Release\BroadcastCommand\</OutputPath>
+    <OutputPath>bin\Release\BroadcastCommand\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>..\..\bin\Release\BroadcastCommand\Contrib.BroadcastCommand.xml</DocumentationFile>
+    <DocumentationFile>bin\Release\BroadcastCommand\Contrib.BroadcastCommand.xml</DocumentationFile>
     <NoWarn>1591</NoWarn>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Poderosa.Core">
-      <HintPath>..\..\bin\Release\Poderosa.Core.dll</HintPath>
+      <HintPath>..\poderosa\bin\Release\Poderosa.Core.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Poderosa.Plugin">
-      <HintPath>..\..\bin\Release\Poderosa.Plugin.dll</HintPath>
+      <HintPath>..\poderosa\bin\Release\Poderosa.Plugin.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Poderosa.TerminalEmulator, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\bin\Release\Poderosa.TerminalEmulator.dll</HintPath>
+    <Reference Include="Poderosa.TerminalEmulator">
+      <HintPath>..\poderosa\bin\Release\Poderosa.TerminalEmulator.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Poderosa.TerminalSession, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Poderosa.TerminalSession">
+      <HintPath>..\poderosa\bin\Release\Poderosa.TerminalSession.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Poderosa.UI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\bin\Release\Poderosa.TerminalSession.dll</HintPath>
+      <HintPath>..\poderosa\bin\Release\Poderosa.UI.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="System" />
