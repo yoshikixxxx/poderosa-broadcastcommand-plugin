@@ -37,6 +37,9 @@ namespace Contrib.BroadcastCommand {
         /// </summary>
         public void SendClearBuffer(ArrayList terminalSession) {
             foreach (ITerminalSession ts in terminalSession) {
+                // 対象セッションをアクティブ(アクティブにしていない状態で実行すると強制終了される)
+                BroadcastCommandPlugin.Instance.SessionManager.ActivateDocument(ts.Terminal.IDocument, ActivateReason.InternalAction);
+
                 ICommandTarget ct = (ICommandTarget)ts.TerminalControl.GetAdapter(typeof(ICommandTarget));
                 if (ct != null) {
                     ICommandManager cm = BroadcastCommandPlugin.Instance.CommandManager;

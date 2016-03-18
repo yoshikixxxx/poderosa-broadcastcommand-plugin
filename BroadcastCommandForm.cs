@@ -106,7 +106,7 @@ namespace Contrib.BroadcastCommand {
             _sessionListView.BeginUpdate();
             _sessionListView.Items.Clear();
 
-            ISessionManager sm = BroadcastCommandPlugin.Instance.GetSessionManager();
+            ISessionManager sm = BroadcastCommandPlugin.Instance.SessionManager;
             IPoderosaDocument[] docs = sm.GetDocuments(_window);
             IWindowManager wm = (IWindowManager)BroadcastCommandPlugin.Instance.WindowManager;
             int docCnt = wm.ActiveWindow.DocumentTabFeature.DocumentCount;

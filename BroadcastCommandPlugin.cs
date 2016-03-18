@@ -20,7 +20,7 @@ namespace Contrib.BroadcastCommand {
     /********* プラグイン情報 *********/
     [PluginInfo(
         ID           = PLUGIN_ID,
-        Version      = "1.1",
+        Version      = "1.2",
         Author       = "yoshikixxxx",
         Dependencies = "org.poderosa.core.window;org.poderosa.terminalsessions;org.poderosa.terminalemulator"
     )]
@@ -96,10 +96,10 @@ namespace Contrib.BroadcastCommand {
         }
 
         /// <summary>
-        /// GetSessionManager
+        /// SessionManager
         /// </summary>
-        public ISessionManager GetSessionManager() {
-            return _coreServices.SessionManager;
+        public ISessionManager SessionManager {
+            get { return _coreServices.SessionManager; }
         }
     }
 

@@ -98,6 +98,10 @@ Poderosaディレクトリ内に下記のように配置します。
 
 
 ## <a name ="dl_history">Download & History
+* 2016/03/19 v1.2 [(.Net2.0)][DL-1.2-net20] [(.Net4.5)][DL-1.2-net45]  
+セッションをアクティブにしていない状態でバッファクリアを実行するとPoderosaが異常終了してしまう不具合を修正しました。  
+(Fixed bug would fail Poderosa performing buffer clear in the State not on the active session.)
+
 * 2016/03/18 v1.1 [(.Net2.0)][DL-1.1-net20] [(.Net4.5)][DL-1.1-net45]  
 画面のバッファクリアボタンを追加しました。  
 (Added the buffer clear button of the screen.)  
@@ -130,4 +134,6 @@ you may not use this file except in compliance with the License.
 [DL-1.0-net45]: https://github.com/yoshikixxxx/poderosa-broadcastcommand-plugin/releases/download/1.0/broadcastcommand_1.0_net45.zip
 [DL-1.1-net20]: https://github.com/yoshikixxxx/poderosa-broadcastcommand-plugin/releases/download/1.1/broadcastcommand_1.1_net20.zip
 [DL-1.1-net45]: https://github.com/yoshikixxxx/poderosa-broadcastcommand-plugin/releases/download/1.1/broadcastcommand_1.1_net45.zip
+[DL-1.2-net20]: https://github.com/yoshikixxxx/poderosa-broadcastcommand-plugin/releases/download/1.2/broadcastcommand_1.2_net20.zip
+[DL-1.2-net45]: https://github.com/yoshikixxxx/poderosa-broadcastcommand-plugin/releases/download/1.2/broadcastcommand_1.2_net45.zip
 [TWITTER]: https://twitter.com/yoshikixxxxaol
