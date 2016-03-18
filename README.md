@@ -1,4 +1,4 @@
-# Poderosa ブロードキャストコマンドプラグイン (v1.1)
+# Poderosa ブロードキャストコマンドプラグイン (v1.2)
 ※日本語から英語への翻訳はBing翻訳を使用しています。  
 (* Japanese to English translations use the Bing translator.)
 
